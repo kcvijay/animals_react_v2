@@ -1,0 +1,52 @@
+.cards {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.animal-card,
+.bird-card {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  margin: 0 0.5rem;
+  border: 1px solid #fff;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.animal-card {
+  background: url("../Assets/rhino.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bird-card {
+  background: url("../Assets/bird.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.animal-card a,
+.bird-card a {
+  position: absolute;
+  bottom: -80px;
+  left: 50%;
+  width: 100%;
+  padding: 1rem;
+  transform: translate(-50%);
+  color: #fff;
+  background: rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  font-size: 2.5rem;
+  transition: all 0.5s ease;
+}
+
+.animal-card:hover a,
+.bird-card:hover a {
+  bottom: 0;
+}
