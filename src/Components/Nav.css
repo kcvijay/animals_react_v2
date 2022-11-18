@@ -9,22 +9,28 @@ nav {
 nav h2 {
   color: #fff;
   font-size: 2rem;
-  padding: 1rem;
+  padding: 2rem 0 1rem 0;
 }
 
 nav ul li {
   display: inline-block;
-  padding: 1rem;
   transition: all 0.2s ease;
+  margin: 1rem;
+  padding: 1.1rem;
 }
-
 nav ul li:hover,
 nav ul li:active {
   background: rgba(0, 0, 0, 0.5);
+  padding: 1.1rem;
 }
 
 nav ul li a {
   color: #fff;
   text-decoration: none;
   font-size: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+
+nav ul li a.active {
+  border-bottom: 2px solid #fff;
 }

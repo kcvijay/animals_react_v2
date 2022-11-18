@@ -1,15 +1,22 @@
 import React from "react";
+import "./Birds.css";
 
-const Birds = () => {
+const Birds = (props) => {
   return (
-    <div>
-      <h1>This is an Bird page</h1>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nam
-        minima, quae, odit nulla commodi sapiente natus adipisci aut dicta,
-        distinctio neque omnis numquam eos illo enim fugiat ducimus obcaecati
-        quaerat? Vel harum ipsa ea!
-      </p>
+    <div className="birds-wrapper">
+      <div className="header">
+        <h2 className="section-header">Birds</h2>
+        <form>
+          <input
+            type="text"
+            name="searchBird"
+            id="searchBird"
+            placeholder="Search birds.."
+            onChange={props.searchHandler}
+          />
+        </form>
+      </div>
+      <div className="birds-cards">{props.birdList}</div>
     </div>
   );
 };
