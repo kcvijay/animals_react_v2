@@ -63,3 +63,8 @@
 .bird-card:hover a {
   bottom: 0;
 }
+
+.animal-card a:hover,
+.bird-card a:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
