@@ -6,6 +6,7 @@ import Animals from "./Components/Animals";
 import Birds from "./Components/Birds";
 import About from "./Components/About";
 import Card from "./Components/Card";
+import PageNotFound from "./Components/PageNotFound";
 import { Animal, Bird } from "./Animal-list";
 import "./App.css";
 
@@ -144,6 +145,7 @@ class App extends Component {
                 }
               ></Route>
               <Route path="/about" element={<About></About>}></Route>
+              <Route path="*" element={<PageNotFound />} />
             </Routes>
           </section>
         </div>

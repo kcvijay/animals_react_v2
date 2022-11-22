@@ -1,0 +1,21 @@
+.section-pagenotfound {
+  text-align: center;
+  color: #fff;
+  line-height: 1.5;
+  padding: 50px;
+}
+
+.img-broken-link {
+  filter: invert(0.5);
+  width: 100px;
+}
+
+.error-code {
+  font-size: 4rem;
+  color: #999;
+}
+
+.error-msg {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
