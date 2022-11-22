@@ -23,6 +23,7 @@ class App extends Component {
     });
   };
 
+  // Adding likes for both animals and birds through different vars. Mapping through animals/birds, searching exact item by name, opening that specific element by ... and adding likes. Setting updated list at the end.
   addLikes = (name) => {
     this.setState((state) => {
       const updatedArrayAnimal = state.animals.map((animal) => {
@@ -46,6 +47,7 @@ class App extends Component {
     });
   };
 
+  // Removing likes for both animals and birds through different vars. Mapping through animals/birds, searching exact item by name, opening that specific element by ... and removing likes. Setting updated list at the end.
   removeLikes = (name) => {
     this.setState((state) => {
       const updatedArrayAnimal = state.animals.map((animal) => {
@@ -69,6 +71,7 @@ class App extends Component {
     });
   };
 
+  // By removing, filtering and posting the cards who are not similar to the specific removing one / Every other than that specific one.
   removeCard = (name) => {
     const updatedArrayAnimal = this.state.animals.filter(
       (animal) => animal.name !== name
@@ -80,12 +83,16 @@ class App extends Component {
   };
 
   render() {
+    // Purposed for filtering the card by name. Posts only cards those include the value of state, while searching.
     const animalsFilter = this.state.animals.filter((animal) => {
       return animal.name.includes(this.state.value);
     });
+    // Purposed for filtering the card by name. Posts only cards those include the value of state, while searching.
     const birdsFilter = this.state.birds.filter((bird) => {
       return bird.name.includes(this.state.value);
     });
+
+    //Mapping the filtered list from above.
     const AnimalList = animalsFilter.map((Animal) => (
       <Card
         key={Animal.name}
