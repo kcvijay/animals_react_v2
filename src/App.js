@@ -25,37 +25,14 @@ class App extends Component {
 
   addLikes = (name) => {
     this.setState((state) => {
-      const updatedArray = state.animals.map((animal) => {
+      const updatedArrayAnimal = state.animals.map((animal) => {
         if (animal.name === name) {
           return { ...animal, likes: animal.likes + 1 };
         } else {
           return animal;
         }
       });
-      return {
-        animals: updatedArray,
-      };
-    });
-  };
-
-  removeLikes = (name) => {
-    this.setState((state) => {
-      const updatedArray = state.animals.map((animal) => {
-        if (animal.name === name) {
-          return { ...animal, likes: animal.likes - 1 };
-        } else {
-          return animal;
-        }
-      });
-      return {
-        animals: updatedArray,
-      };
-    });
-  };
-
-  addLikesBirds = (name) => {
-    this.setState((state) => {
-      const updatedArray = state.birds.map((bird) => {
+      const updatedArrayBird = state.birds.map((bird) => {
         if (bird.name === name) {
           return { ...bird, likes: bird.likes + 1 };
         } else {
@@ -63,14 +40,22 @@ class App extends Component {
         }
       });
       return {
-        birds: updatedArray,
+        animals: updatedArrayAnimal,
+        birds: updatedArrayBird,
       };
     });
   };
 
-  removeLikesBirds = (name) => {
+  removeLikes = (name) => {
     this.setState((state) => {
-      const updatedArray = state.birds.map((bird) => {
+      const updatedArrayAnimal = state.animals.map((animal) => {
+        if (animal.name === name) {
+          return { ...animal, likes: animal.likes - 1 };
+        } else {
+          return animal;
+        }
+      });
+      const updatedArrayBird = state.birds.map((bird) => {
         if (bird.name === name) {
           return { ...bird, likes: bird.likes - 1 };
         } else {
@@ -78,21 +63,20 @@ class App extends Component {
         }
       });
       return {
-        birds: updatedArray,
+        animals: updatedArrayAnimal,
+        birds: updatedArrayBird,
       };
     });
   };
 
   removeCard = (name) => {
-    const updatedArray = this.state.animals.filter(
+    const updatedArrayAnimal = this.state.animals.filter(
       (animal) => animal.name !== name
     );
-    this.setState({ animals: updatedArray });
-  };
-
-  removeCardBirds = (name) => {
-    const updatedArray = this.state.birds.filter((bird) => bird.name !== name);
-    this.setState({ birds: updatedArray });
+    const updatedArrayBird = this.state.birds.filter(
+      (bird) => bird.name !== name
+    );
+    this.setState({ animals: updatedArrayAnimal, birds: updatedArrayBird });
   };
 
   render() {
@@ -119,9 +103,9 @@ class App extends Component {
         name={Bird.name}
         likes={Bird.likes}
         dislikes={Bird.likes < 0}
-        addLikes={() => this.addLikesBirds(Bird.name)}
-        removeLikes={() => this.removeLikesBirds(Bird.name)}
-        removeCard={() => this.removeCardBirds(Bird.name)}
+        addLikes={() => this.addLikes(Bird.name)}
+        removeLikes={() => this.removeLikes(Bird.name)}
+        removeCard={() => this.removeCard(Bird.name)}
       />
     ));
     return (
