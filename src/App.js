@@ -15,12 +15,13 @@ class App extends Component {
     animals: Animal, // From list
     birds: Bird, // From list
     likes: 0,
-    value: "",
+    searchAnimal: "",
+    searchBird: "",
   };
 
   searchHandler = (e) => {
     this.setState({
-      value: e.target.value,
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -86,11 +87,11 @@ class App extends Component {
   render() {
     // Purposed for filtering the card by name. Posts only cards those include the value of state, while searching.
     const animalsFilter = this.state.animals.filter((animal) => {
-      return animal.name.includes(this.state.value);
+      return animal.name.includes(this.state.searchAnimal);
     });
     // Purposed for filtering the card by name. Posts only cards those include the value of state, while searching.
     const birdsFilter = this.state.birds.filter((bird) => {
-      return bird.name.includes(this.state.value);
+      return bird.name.includes(this.state.searchBird);
     });
 
     //Mapping the filtered list from above.
